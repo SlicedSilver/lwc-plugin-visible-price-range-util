@@ -15,7 +15,7 @@ function buildPackageJson(packageName) {
 			"type": "git",
 			"url": "https://github.com/slicedsilver/lwc-plugin-visible-price-range-util.git"
 		},
-		version: '0.1.0',
+		version: '0.1.1',
 		keywords: ['lwc-plugin', 'lightweight-charts'],
 		type: 'module',
 		main: `./${packageName}.umd.cjs`,
@@ -117,5 +117,6 @@ pluginsToBuild.forEach(file => {
 		console.error('Error generating typings for: ', file.exportName);
 	}
 });
+copyFileSync(resolve(currentDir, 'README.md'), resolve(compiledFolder, `README.md`));
 const endTime = Date.now().valueOf();
 console.log(`🎉 Done (${endTime - startTime}ms)`);
